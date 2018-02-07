@@ -182,25 +182,25 @@ Java?
 
 Parameter Passing
 ---------------------------
-### PASS BY VALUE
+### Pass by Value
 * Most common mechanism of parameter passing
 * Default in C++ and Pascal and essentially the only parameter passing mechanism in C and Java.
 * Copy of the actual is passed into function
 * Downside is that it uses more memory
 
-### PASS BY RESULT
+### Pass by Result
 * Implementation of out-mode parameters
 * Before the control is handed back to the caller, the formal parameter is passed to the actual parameter.
 * Downside: parameter collision
 
-### PASS BY VALUE RESULT
+### Pass by Value Result
 * Combines the actions of the IN and OUT parameters
 * Value of actual parameter is used to initialize the corresponding formal parameter
 * Same disadvantages as pass by value and pass by result
 * Pascal VAR parameters
 * Addresses to which to return the values are always calculated on entry of the subprogram
 
-### PASS BY REFERENCE
+### Pass by Reference
 * Second implementation for in out mode
 * Transmits an access path, usually
 
