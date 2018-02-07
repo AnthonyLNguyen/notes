@@ -7,53 +7,120 @@ $ git push
 
 # Markdown Cheats
 
-## SmartyPants
+Headers
+---------------------------
 
-SmartyPants converts ASCII punctuation characters into "smart" typographic punctuation HTML entities. For example:
+# Header 1
 
-|                |ASCII                          |HTML                         |
-|----------------|-------------------------------|-----------------------------|
-|Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
-|Quotes          |`"Isn't this fun?"`            |"Isn't this fun?"            |
-|Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
+## Header 2
 
-
-## KaTeX
-
-You can render LaTeX mathematical expressions using [KaTeX](https://khan.github.io/KaTeX/):
-
-The *Gamma function* satisfying $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$ is via the Euler integral
-
-$$
-\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.
-$$
-
-> You can find more information about **LaTeX** mathematical expressions [here](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference).
+### Header 3
 
 
-## UML diagrams
+Styling
+---------------------------
 
-You can render UML diagrams using [Mermaid](https://mermaidjs.github.io/). For example, this will produce a sequence diagram:
+*Emphasize* _emphasize_
 
-```mermaid
-sequenceDiagram
-Alice ->> Bob: Hello Bob, how are you?
-Bob-->>John: How about you John?
-Bob--x Alice: I am good thanks!
-Bob-x John: I am good thanks!
-Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
+**Strong** __strong__
 
-Bob-->Alice: Checking with John...
-Alice->John: Yes... John, how are you?
+~~Mistaken text.~~
+
+> Quoted text.
+
+H~2~O is a liquid.
+
+2^10^ is 1024.
+
+
+Lists
+---------------------------
+
+- Item
+* Item
++ Item
+
+1. Item
+2. Item
+3. Item
+
+
+Links
+---------------------------
+
+A [link](http://example.com).
+
+An image: ![Alt](img.jpg)
+
+
+Code
+---------------------------
+
+Some `inline code`.
+
+```
+// A code block
+var foo = 'bar';
 ```
 
-And this will produce a flow chart:
-
-```mermaid
-graph LR
-A[Square Rect] -- Link text --> B((Circle))
-A --> C(Round Rect)
-B --> D{Rhombus}
-C --> D
+```javascript
+// An highlighted block
+var foo = 'bar';
 ```
+
+
+Tables
+---------------------------
+
+```Markdown
+Item     | Value
+-------- | -----
+Computer | $1600
+Phone    | $12
+Pipe     | $1
+
+
+| Column 1 | Column 2      |
+|:--------:| -------------:|
+| centered | right-aligned |
+
+```
+
+
+Item     | Value
+-------- | -----
+Computer | $1600
+Phone    | $12
+Pipe     | $1
+
+
+| Column 1 | Column 2      |
+|:--------:| -------------:|
+| centered | right-aligned |
+
+
+Definition lists
+---------------------------
+
+Markdown
+:  Text-to-HTML conversion tool
+
+Classeur
+:  French translation for "Binder"
+:  A Markdown editing app
+
+Footnotes
+---------------------------
+
+Some text with a footnote.[^1]
+
+[^1]: The footnote.
+
+
+Abbreviations
+---------------------------
+
+Markdown converts text to HTML.
+
+*[HTML]: HyperText Markup Language
 
