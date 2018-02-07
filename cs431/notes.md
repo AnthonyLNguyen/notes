@@ -31,3 +31,13 @@ Processing and Threads
 * __Error exit__- the process discovers a fatal error - compiler tries to compile a program, there is no such a file (__voluntary__).
 * __Fatal error__- error caused by the processor - a process tries to modify the memory location where other process is located (__involuntary__).
 * __Killed by another process__- a deadlock has occurred. Kill the process call, resolve the deadlock (__involuntary__).
+
+### Process State
+![States](runningblockready.png)
+
+### Process Implementation
+* To implement the process, operating system maintain each process's information in its <u>process table</u>(or <u>process control block</u> __PCB__)
+* When a running process's state changes to __block__ state or __ready__ state, OS needs to save information for the process.
+* When a process state changes to __running__ state, OS needs to restore information for the process (from its process table) into CPU
+
+
