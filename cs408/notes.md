@@ -105,7 +105,8 @@ Syntax and CFG
 ### Ambiguous Grammars
 ### Leftmost Derivation
 
-# Variable: 6 attributes
+Variable - 6 attributes
+---------------------------
  * Name
  * Type
  * Address
@@ -231,7 +232,7 @@ Subprograms
 * The only ARI's you see are of active subprograms
     + Active subprograms are ones that have begun execution, but hasn't finished it
     + once finished ARI is removed from the stack
-* DRAWING RUNTIME STACK
+* Drawing Runtime Stack
     + Look at which subprogram you are in, what are the currently active ones, draw stack in order they were called
 
 * Dynamic Link Pointer Use (in statically scoped languages): 
@@ -241,6 +242,6 @@ Subprograms
 
 * Every local variable has a chain offset of 0
 
-* H owever many static links you follow in the ARI to get to the place where the variable is declared is the offset
+* However many static links you follow in the ARI to get to the place where the variable is declared is the offset
     + Local offset - count from bottom of subs ari to the location below the one with the var in it
 
