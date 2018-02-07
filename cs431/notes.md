@@ -99,4 +99,6 @@ Threads
 * Process Scheduling Algorithms for Interactive 
     + System
     + Round Robin
-    + Priority Queu
+    + Priority Queue
+
+
