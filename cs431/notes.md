@@ -18,7 +18,7 @@ Processing and Threads
 * The computation time is also based on the process type - I/O bounded, CPU bounded.
 
 ### Process Creation
-* <b style="color: red;">System initialization<b>- when an OS is booted, typically <u>several processes</u> are created.
+* __System initialization__- when an OS is booted, typically <u>several processes</u> are created.
     + Foreground processes
     + Background processes (daemons)
 * __Execution of a process creation system call by a running process__- a running process issues system calls to create one or more new processes.
