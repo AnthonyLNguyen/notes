@@ -24,3 +24,10 @@ Processing and Threads
 * __Execution of a process creation system call by a running process__- a running process issues system calls to create one or more new processes.
 * __A user creates a new process__- in interactive systems, users can start a program by typing a command or (double) clicking an icon.
 * __Initiation of a batch job__- mainframe computer
+
+### Process Termination
+#### A process terminate due to one of the following condition
+* __Normal exit__- done with their work (__voluntary__).
+* __Error exit__- the process discovers a fatal error - compiler tries to compile a program, there is no such a file (__voluntary__).
+* __Fatal error__- error caused by the processor - a process tries to modify the memory location where other process is located (__involuntary__).
+* __Killed by another process__- a deadlock has occurred. Kill the process call, resolve the deadlock (__involuntary__).
