@@ -1,24 +1,26 @@
 # CS408 Notes
 
-## Programming Paradigms
+Programming Paradigms
+---------------------------
 * Functional Programming
 	+ Applies functions to parameters to accomplish task
 	+ Computation is specified by a call to defined functions which are calls to other functions
-		- LISP, Scheme, ML
+  - LISP, Scheme, ML
 * Imperative Programming
 	+ commands, action oriented
 	+ sharp distinction between action and data
 	+ no/limited support for abstraction
-		- Fortran, Algol60, Pascal, Ada, C
+  - Fortran, Algol60, Pascal, Ada, C
 * Logic Programming
 	+ Predicate logic calculus
 	+ axioms (facts) and rules to deduce new facts
-		- prolog, prolog++
+  - prolog, prolog++
 * Object Oriented Programming
 	+ Programming based on the use of classes as objects
-		- java, C++, python, ruby
+  - java, C++, python, ruby
 
-## Compilation and Interpretation
+Compilation and Interpretation
+---------------------------
 1. The language is brought down to the level of machine 
 (compilation)
     Source code -> machine code
@@ -37,7 +39,8 @@ Symbol Table -> Intermediate Code Generator -> Optimization
 
 
 
-## Language Evaluation Criteria
+Language Evaluation Criteria
+---------------------------
 * Readability
 	+ Orthogonality
 	+ Non-orthogonality
@@ -60,7 +63,8 @@ Symbol Table -> Intermediate Code Generator -> Optimization
 * Completeness
 
 
-## Syntax and CFG
+Syntax and CFG
+---------------------------
 ### What is the syntax of a language?
 > the form or structure of the expressions, statements, and program units
 
@@ -101,7 +105,8 @@ Symbol Table -> Intermediate Code Generator -> Optimization
  * Lifetime    Temporal     (how long is the variable bound to the same memory location)
 
 
-# Binding
+Binding
+---------------------------
 * Static - bound to memory cells before execution begins and remains bound to the same memory cell throughout execution.
 	+ Advantage - history sensitive
 	+ Disadvantage - no recursive functions for languages that use only static variable
@@ -113,42 +118,45 @@ Symbol Table -> Intermediate Code Generator -> Optimization
 	+ Disadvantage: error-prone use of pointers and references
 * Implicit heap-dynamic variables: Allocation and deallocation caused by assignment statements
 	+ Advantages - help in writing generic code, highly flexible
-		- used in purely interpreted languages
+  - used in purely interpreted languages
 	+ Disadvantages - maintaining all dynamic attributes have a high overhead time, loss of error detection.
 
-# Row and Column major Addressing
-## Row major addressing
+Row and Column major Addressing
+---------------------------
+### Row major addressing
 ```Java 
 Location(a[i][j]) = address(a[1][1]) + (i-1)*n*element_size + (j-1)*element_size 
 ```
-## Column major addressing
+### Column major addressing
 ```Java 
 Location(a[i][j]) = address(a[1][1]) + (j-1)*m*element_size + (i-1)*element_size 
 ```
 
-# Pointers and References
+Pointers and References
+---------------------------
 A pointer can point to many different objects during its lifetime, a reference can refer to only one object during its lifetime. 
 
-# Parameter Passing
-## PASS BY VALUE
+Parameter Passing
+---------------------------
+### PASS BY VALUE
 * Most common mechanism of parameter passing
 * Default in C++ and Pascal and essentially the only parameter passing mechanism in C and Java.
 * Copy of the actual is passed into function
 * Downside is that it uses more memory
 
-# PASS BY RESULT
+### PASS BY RESULT
 * Implementation of out-mode parameters
 * Before the control is handed back to the caller, the formal parameter is passed to the actual parameter.
 * Downside: parameter collision
 
-# PASS BY VALUE RESULT
+### PASS BY VALUE RESULT
 * Combines the actions of the IN and OUT parameters
 * Value of actual parameter is used to initialize the corresponding formal parameter
 * Same disadvantages as pass by value and pass by result
 * Pascal VAR parameters
 * Addresses to which to return the values are always calculated on entry of the subprogram
 
-# PASS BY REFERENCE
+### PASS BY REFERENCE
 * Second implementation for in out mode
 * Transmits an access path, usually
 
