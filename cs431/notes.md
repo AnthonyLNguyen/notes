@@ -58,3 +58,6 @@ Threads
 * Multiple processes running on a computer-Processes share physical memory, disks, printers and other resources.
 * Multiple threads running on a process- the threads share an address space, open files, and other resources.
 * Multiple threads working together -By sharing a set of resources, threads can work together closely to perform some task.
+
+### Multithreading
+* processes normally start with a single thread present. This thread has the ability to create new threads by calling a library procedure (e.g. thread\_create).
