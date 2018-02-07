@@ -33,9 +33,7 @@ Compilation and Interpretation
 
 
 ### COMPILATION
-Source program -> Lexical Analyzer -> Syntax Analyzer -> Intermediate Code Generator -> Code Generator -> Computer
-
-Symbol Table -> Intermediate Code Generator -> Optimization
+![Diagram](compilation.png)
 
 
 
