@@ -145,6 +145,41 @@ Pointers and References
 ---------------------------
 A pointer can point to many different objects during its lifetime, a reference can refer to only one object during its lifetime. 
 
+Dangling Pointer
+
+```C++
+int *x,  *y  ;
+x = new int [1] ;
+*x = 1 ;
+y = x;
+delete [] x ;
+cout << *y ;
+```
+
+Functional Side Effect
+---------------------------
+* When a function changes one of its parameter or a global or nonlocal variable
+    + Expression such as a + fun(a) : has a side effect if a is changed by the function fun()
+
+```C++
+int a = 4;
+int fun1() {
+a = 17 ;
+return 6; }
+void fun2() {
+a = a + fun1() ;
+}
+void main() {
+fun2();
+}
+```
+
+What are the values of a in fun2
+in both the scenarios in C/C++ 
+Java?
+10 and 23
+
+
 Parameter Passing
 ---------------------------
 ### PASS BY VALUE
