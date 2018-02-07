@@ -60,6 +60,17 @@ Language Evaluation Criteria
 * Generality
 * Completeness
 
+| Characteristic           | Readability | Writablity | Reliability |
+|--------------------------|-------------|------------|-------------|
+| Simplicity/Orthogonality |      x      |      x     |      x      |
+| Control Structures       |      x      |      x     |      x      |
+| Data type/Structures     |      x      |      x     |      x      |
+| Syntax Design            |      x      |      x     |      x      |
+| Support for Abstraction  |             |      x     |      x      |
+| Expressivity             |             |      x     |      x      |
+| Type Checking            |             |            |      x      |
+| Exception Handling       |             |            |      x      |
+| Restrictive Aliasing     |             |            |      x      |
 
 Syntax and CFG
 ---------------------------
