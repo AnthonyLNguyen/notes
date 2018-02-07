@@ -33,7 +33,7 @@ Compilation and Interpretation
 
 
 ### COMPILATION
-![Diagram](compilation.png)
+![Compilation Diagram](compilation.png)
 
 
 
@@ -179,28 +179,68 @@ in both the scenarios in C/C++
 Java?
 10 and 23
 
+Subprograms
+--------------------------
+#### What are subprograms?
+* Definition
+    + A description of the actions of the subprogram abstraction 
+* Subprogram call
+    + an explicit request that the subprogram be executed
+* Subprogram header
+    + The first line of the definition, including the name, the kind of subprogram and the formal parameters.
 
-Parameter Passing
----------------------------
-### Pass by Value
+* Why are parameters called formal parameters?
+    + Arguments != parameters
+        - Arguments are informal parameters, their values are being sent into the subprogram.
+        - parameters are formal parameters, no value (like your egress) Placeholder for you are code.
+        
+* The parameter profile of a subprogram is the number, order, and type of its parameters
+* the protocol of a subprogram is its parameter profile plus something else RETURN TYPE
+
+#### Parameter Passing
+##### Pass by Value
 * Most common mechanism of parameter passing
 * Default in C++ and Pascal and essentially the only parameter passing mechanism in C and Java.
 * Copy of the actual is passed into function
 * Downside is that it uses more memory
 
-### Pass by Result
+##### Pass by Result
 * Implementation of out-mode parameters
 * Before the control is handed back to the caller, the formal parameter is passed to the actual parameter.
 * Downside: parameter collision
 
-### Pass by Value Result
+##### Pass by Value Result
 * Combines the actions of the IN and OUT parameters
 * Value of actual parameter is used to initialize the corresponding formal parameter
 * Same disadvantages as pass by value and pass by result
 * Pascal VAR parameters
 * Addresses to which to return the values are always calculated on entry of the subprogram
 
-### Pass by Reference
+##### Pass by Reference
 * Second implementation for in out mode
 * Transmits an access path, usually
+
+#### Overloaded Subprograms
+* Subprograms with same name and referencing environment but different in number, order, or type of parameters
+    + Also called polymorphism (static and dynamic)
+        - static - operator overloading. The body must know at compile time. Binding the meaning of the function or operator to the body of statements at compile time
+* Mixing call by value and call by reference in the exact same parameter list is also invalid
+
+
+#### Activation Record
+* The only ARI's you see are of active subprograms
+    + Active subprograms are ones that have begun execution, but hasn't finished it
+    + once finished ARI is removed from the stack
+* DRAWING RUNTIME STACK
+    + Look at which subprogram you are in, what are the currently active ones, draw stack in order they were called
+
+* Dynamic Link Pointer Use (in statically scoped languages): 
+    + To tear down the ARI stack on subprogram completion
+
+* A static chain is a chain of static links that connects certain activation record instances.
+
+* Every local variable has a chain offset of 0
+
+* H owever many static links you follow in the ARI to get to the place where the variable is declared is the offset
+    + Local offset - count from bottom of subs ari to the location below the one with the var in it
 
