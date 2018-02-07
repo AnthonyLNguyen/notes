@@ -40,4 +40,11 @@ Processing and Threads
 * When a running process's state changes to __block__ state or __ready__ state, OS needs to save information for the process.
 * When a process state changes to __running__ state, OS needs to restore information for the process (from its process table) into CPU
 
-
+####Contents of a Process Table (or PCB)
+* Process status- ready, running, blocked
+* Program counter-  address of next instructions for the process
+* CPU registers- registers vary in number and type, depending on the computer architecture. 
+* CPU scheduling information- a process priority, pointers to the scheduling queues.
+* Memory management information- the base and limit registers, the page tables, the segmentation tables.
+* Accounting information- the amount of CPU and real time used, time limits, account numbers, process numbers,...
+* I/O status information- list of I/O devices allocated to the process, list of open files, and so on ...
