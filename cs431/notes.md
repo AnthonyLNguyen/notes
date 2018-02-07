@@ -61,3 +61,42 @@ Threads
 
 ### Multithreading
 * processes normally start with a single thread present. This thread has the ability to create new threads by calling a library procedure (e.g. thread\_create).
+
+### Interprocess Communication (Race Condition)
+* How to avoid race condition? 
+* __Mutual exclusion__- some way of making sure that if one process is using a shared variable or file, the other processes will be excluded from using the same variable or file.
+* The choice of the algorithm for achieving mutual exclusion is a major design issue in any operating system.
+* __Critical section__ (critical region) - The part of program where the shared memory is accessed.
+
+### Semaphores - by E. W. Dijkstra 
+* A semaphore is an integer variable which could have value 
+* 0:  no wakeups are saved
+* + i: i wakeups are pending
+* A semaphore is accessed only through two standard atomic operations down (or P) and up(or V).
+
+
+### Classical IPC Problems
+#### The Dining Philosophers Problem
+> Philosophers eat/think
+> Eating needs 2 forks
+> Pick one fork at a time 
+> How to prevent deadlock 
+
+#### The Readers and Writers Problem
+> You want to have a "critical section" where multiple writers are allowed, as well as multiple readers, but at no time should readers and writers be allowed in at the same time. You want a deadlock free, starvation free solution. 
+
+#### The Sleeping Barber Problem
+> In computer science, the sleeping barber problem is a classic inter-process communication and synchronization problem between multiple operating system processes. The problem is analogous to that of keeping a barber working when there are customers, resting when there are none, and doing so in an orderly manner.
+
+### Process Scheduling
+* Process Scheduler
+    + Short Term Scheduler
+    + Long Term Scheduler
+* Process Scheduling Algorithms for Batch System
+    + First Come First Serve
+    + Shortest Job First
+    + Shortest Remaining Job First
+* Process Scheduling Algorithms for Interactive 
+    + System
+    + Round Robin
+    + Priority Queu
