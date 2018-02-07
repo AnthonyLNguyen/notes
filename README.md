@@ -10,6 +10,17 @@ $ git push
 Headers
 ---------------------------
 
+```Mardown
+Headers
+---------------------------
+
+# Header 1
+
+## Header 2
+
+### Header 3
+```
+
 # Header 1
 
 ## Header 2
@@ -20,6 +31,20 @@ Headers
 Styling
 ---------------------------
 
+```Markdown
+*Emphasize* _emphasize_
+
+**Strong** __strong__
+
+~~Mistaken text.~~
+
+> Quoted text.
+
+H~2~O is a liquid.
+
+2^10^ is 1024.
+
+```
 *Emphasize* _emphasize_
 
 **Strong** __strong__
@@ -36,7 +61,19 @@ H~2~O is a liquid.
 Lists
 ---------------------------
 
+```Markdown
 - Item
+    * Item
+* Item
++ Item
+
+1. Item
+2. Item
+3. Item
+```
+
+- Item
+    * Item
 * Item
 + Item
 
@@ -47,6 +84,12 @@ Lists
 
 Links
 ---------------------------
+
+```Markdown
+A [link](http://example.com).
+
+An image: ![Alt](img.jpg)
+```
 
 A [link](http://example.com).
 
@@ -99,28 +142,4 @@ Pipe     | $1
 | centered | right-aligned |
 
 
-Definition lists
----------------------------
-
-Markdown
-:  Text-to-HTML conversion tool
-
-Classeur
-:  French translation for "Binder"
-:  A Markdown editing app
-
-Footnotes
----------------------------
-
-Some text with a footnote.[^1]
-
-[^1]: The footnote.
-
-
-Abbreviations
----------------------------
-
-Markdown converts text to HTML.
-
-*[HTML]: HyperText Markup Language
 
