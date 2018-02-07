@@ -40,7 +40,7 @@ Processing and Threads
 * When a running process's state changes to __block__ state or __ready__ state, OS needs to save information for the process.
 * When a process state changes to __running__ state, OS needs to restore information for the process (from its process table) into CPU
 
-####Contents of a Process Table (or PCB)
+#### Contents of a Process Table (or PCB)
 * Process status- ready, running, blocked
 * Program counter-  address of next instructions for the process
 * CPU registers- registers vary in number and type, depending on the computer architecture. 
@@ -48,3 +48,13 @@ Processing and Threads
 * Memory management information- the base and limit registers, the page tables, the segmentation tables.
 * Accounting information- the amount of CPU and real time used, time limits, account numbers, process numbers,...
 * I/O status information- list of I/O devices allocated to the process, list of open files, and so on ...
+
+Threads
+-------
+* Threads are processes in a process!!! -multiple executions in the same process environment.
+* Each thread has its own: thread ID, program counter, register set, and stack.
+* Different threads are not quite as independent as different processes since they share same address space.
+* It shares with other threads belonging to the same process its code section, data sectionand other operating system resources such as filesand child processes.
+* Multiple processes running on a computer-Processes share physical memory, disks, printers and other resources.
+* Multiple threads running on a process- the threads share an address space, open files, and other resources.
+* Multiple threads working together -By sharing a set of resources, threads can work together closely to perform some task.
