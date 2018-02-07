@@ -1,4 +1,4 @@
-#CS408 Notes
+# CS408 Notes
 
 ## Programming Paradigms
 * Functional Programming
