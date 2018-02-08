@@ -1,30 +1,5 @@
 # CS431 Notes
-------------------------
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-
-- [Processing and Threads](#processing-and-threads)
-	- [The Processes](#the-processes)
-	- [The Process Model](#the-process-model)
-		- [Two different points of view.](#two-different-points-of-view)
-	- [Process Creation](#process-creation)
-	- [Process Termination](#process-termination)
-		- [A process terminate due to one of the following condition](#a-process-terminate-due-to-one-of-the-following-condition)
-	- [Process State](#process-state)
-	- [Process Implementation](#process-implementation)
-		- [Contents of a Process Table (or PCB)](#contents-of-a-process-table-or-pcb)
-- [Threads](#threads)
-	- [Multithreading](#multithreading)
-	- [Interprocess Communication (Race Condition)](#interprocess-communication-race-condition)
-	- [Semaphores - by E. W. Dijkstra](#semaphores-by-e-w-dijkstra)
-	- [Classical IPC Problems](#classical-ipc-problems)
-		- [The Dining Philosophers Problem](#the-dining-philosophers-problem)
-		- [The Readers and Writers Problem](#the-readers-and-writers-problem)
-		- [The Sleeping Barber Problem](#the-sleeping-barber-problem)
-	- [Process Scheduling](#process-scheduling)
-
-<!-- /TOC -->
----------------------------
 ## Processing and Threads
 
 ### The Processes
@@ -73,7 +48,7 @@
 * Accounting information- the amount of CPU and real time used, time limits, account numbers, process numbers,...
 * I/O status information- list of I/O devices allocated to the process, list of open files, and so on ...
 
----------------------------
+
 ## Threads
 * Threads are processes in a process!!! -multiple executions in the same process environment.
 * Each thread has its own: thread ID, program counter, register set, and stack.
