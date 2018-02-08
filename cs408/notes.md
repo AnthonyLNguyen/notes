@@ -147,25 +147,81 @@ What are tokens?
   - used in purely interpreted languages
 	+ Disadvantages - maintaining all dynamic attributes have a high overhead time, loss of error detection.
 
+## Scoping
+### Static
+```Pascal
+procedure big;
+	var a, b: integer;
+			procedure sub1;
+				var x, y: integer ;
+				begin {sub1}
+					... (1)
+				end ;{sub1}
+			procedure sub2;
+				var x: integer;
+					...
+				procedure sub3;
+					var x: integer;
+					begin {sub3}
+						... (2)
+					end ; {sub3}
+				begin {sub2}
+					... (3)
+				end ; {sub2}
+	begin {big}
+		... (4)
+	end ; {big}
+
+```
+
+Referencing environment at different points in the code
+
+1. x, y of sub1 and a,b of big
+2. x of sub3 and a and b of big
+3. x of sub2 and a and b of big
+4. a and b of big
+
+Is scope of sub1 a staticancestor of sub3?
 
 
+### Dynamic
+```C++
+void sub1() {
+int a,b ;
+... (1)
+}
+void sub2() {
+int b, c ;
+... (2)
+sub1();
+}
+void main() {
+int c, d ;
+... (3)
+sub2() ;
+}
+```
+
+Referencing environment at different points in the code
+
+1. a, b of sub1, c of sub2 and d of main
+2. b and c of sub2 and d of main
+3. c and d of main
 
 
-## Row and Column major Addressing
-### Row major addressing
+## Data types
+
+### Arrays
+#### Row and Column major Addressing
+Row major addressing
 ```Java
 Location(a[i][j]) = address(a[1][1]) + (i-1)*n*element_size + (j-1)*element_size;
 ```
-### Column major addressing
+Column major addressing
 ```Java
 Location(a[i][j]) = address(a[1][1]) + (j-1)*m*element_size + (i-1)*element_size;
 ```
-
-
-
-
-
-## Pointers and References
+### Pointers and References
 A pointer can point to many different objects during its lifetime, a reference can refer to only one object during its lifetime.
 
 Dangling Pointer
@@ -178,9 +234,33 @@ y = x;
 delete [] x ;
 cout << *y ;
 ```
+#### Pointer Confusion
 
+```C++
+int *x, *y, *z, *a, *c, b[3] = {1, -4, 5} ;
+a = new int [3] ; //creating an array of 3 elements
+x = a ;
+a[0] = 0; a[1] = 1; a[2] = 2;
+cout << a[0] << "\t"<< a[1] << "\t" << a[2] << endl ; // statement 1
+z = &b[1] ;
+y = x+2 ;
+cout <<*x<< "\t"<< *y << endl ; // statement 2
+*x = *x-3 ;
+cout << *x << endl ; // statement 3
+*(++z) = *(--y) + *x ;
+cout << *z << endl ; // statement 4
+*y++ = *&b[2]*(*--z) ;
+cout << *y << endl ; // statement 5
+c = new int ;
+*c = 2 ;
+for(int j = 0 ; j< 3 ; j++)
+cout << a[j] << "\t" << b[j] << endl ; // statement 6
+delete [] a;
+cout << *x << endl ; // statement 7
+c = NULL ;
+```
 
-
+##### Pointers Well Understood
 
 
 ## Functional Side Effect
