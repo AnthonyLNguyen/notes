@@ -176,10 +176,10 @@ procedure big;
 
 Referencing environment at different points in the code
 
-1. x, y of sub1 and a,b of big
-2. x of sub3 and a and b of big
-3. x of sub2 and a and b of big
-4. a and b of big
+1. `x`, `y` of `sub1` and `a`,`b` of `big`
+2. `x` of `sub3` and `a` and `b` of `big`
+3. `x` of `sub2` and `a` and `b` of `big`
+4. `a` and `b` of `big`
 
 Is scope of sub1 a static ancestor of sub3?
 
