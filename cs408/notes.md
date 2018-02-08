@@ -181,7 +181,7 @@ Referencing environment at different points in the code
 3. x of sub2 and a and b of big
 4. a and b of big
 
-Is scope of sub1 a staticancestor of sub3?
+Is scope of sub1 a static ancestor of sub3?
 
 
 ### Dynamic
@@ -281,14 +281,18 @@ c = NULL ;
 
 ```C++
 int a = 4;
+
 int fun1() {
-a = 17 ;
-return 6; }
-void fun2() {
-a = a + fun1() ;
+	a = 17 ;
+	return 6;
 }
+
+void fun2() {
+	a = a + fun1() ;
+}
+
 void main() {
-fun2();
+	fun2();
 }
 ```
 
