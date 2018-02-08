@@ -310,7 +310,7 @@ program MAIN_2;
 			procedure SUB1;
 				var A, D : integer;
 				begin { SUB1 }
-							A := B + C; <-----------------------1
+						A := B + C; //1
 						end; { SUB1 }
 			procedure SUB2(X : integer);
 			var B, E : integer;
@@ -318,11 +318,11 @@ program MAIN_2;
 				var C, E : integer;
 				begin { SUB3 }
 					SUB1;
-					E := B + A: <--------------------2
+					E := B + A: //2
 				end; { SUB3 }
 			begin { SUB2 }
 				SUB3;
-				A := D + E; <-----------------------3
+				A := D + E; //3
 			end; { SUB2 }
 		begin { BIGSUB }
 		SUB2(7);
