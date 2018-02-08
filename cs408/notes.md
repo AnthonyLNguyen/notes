@@ -329,7 +329,7 @@ program MAIN_2;
 		end; { BIGSUB }
 	begin
 	BIGSUB;
-	end. { MAIN_2 }
+end. { MAIN_2 }
 ```
 Call sequence for MAIN_2
 >MAIN_2 calls BIGSUB
