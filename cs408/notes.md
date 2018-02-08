@@ -342,9 +342,14 @@ program MAIN_2;
 end. { MAIN_2 }
 ```
 Call sequence for `MAIN_2`
+
 `MAIN_2` calls `BIGSUB`
+
 `BIGSUB` calls `SUB2`
+
 `SUB2` calls `SUB3`
+
 `SUB3` calls `SUB1`
+
 
 ![ARI](ARIstack.JPG)
