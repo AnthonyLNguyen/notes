@@ -1,6 +1,29 @@
 # CS431 Notes
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-Processing and Threads
+- [CS431 Notes](#cs431-notes)
+	- [Processing and Threads](#processing-and-threads)
+		- [The Processes](#the-processes)
+		- [The Process Model](#the-process-model)
+			- [Two different points of view.](#two-different-points-of-view)
+		- [Process Creation](#process-creation)
+		- [Process Termination](#process-termination)
+			- [A process terminate due to one of the following condition](#a-process-terminate-due-to-one-of-the-following-condition)
+		- [Process State](#process-state)
+		- [Process Implementation](#process-implementation)
+			- [Contents of a Process Table (or PCB)](#contents-of-a-process-table-or-pcb)
+	- [Threads](#threads)
+		- [Multithreading](#multithreading)
+		- [Interprocess Communication (Race Condition)](#interprocess-communication-race-condition)
+		- [Semaphores - by E. W. Dijkstra](#semaphores-by-e-w-dijkstra)
+		- [Classical IPC Problems](#classical-ipc-problems)
+			- [The Dining Philosophers Problem](#the-dining-philosophers-problem)
+			- [The Readers and Writers Problem](#the-readers-and-writers-problem)
+			- [The Sleeping Barber Problem](#the-sleeping-barber-problem)
+		- [Process Scheduling](#process-scheduling)
+
+<!-- /TOC -->
+## Processing and Threads
 ----------------------
 
 ### The Processes
@@ -10,11 +33,11 @@ Processing and Threads
 * CPU switches from one process to another based on chosen scheduling algorithm and process state
 
 ### The Process Model
-#### Two different points of view. 
-* Real Model - multiprogramming (rapidly switching back and forth) 
+#### Two different points of view.
+* Real Model - multiprogramming (rapidly switching back and forth)
 * Conceptual Model - each process has its own virtual CPU, PC, registers, stack pointer
 
-* With the CPU switching back and forth among the processes, its computation time will not be uniform. 
+* With the CPU switching back and forth among the processes, its computation time will not be uniform.
 * The computation time is also based on the process type - I/O bounded, CPU bounded.
 
 ### Process Creation
@@ -43,13 +66,13 @@ Processing and Threads
 #### Contents of a Process Table (or PCB)
 * Process status- ready, running, blocked
 * Program counter-  address of next instructions for the process
-* CPU registers- registers vary in number and type, depending on the computer architecture. 
+* CPU registers- registers vary in number and type, depending on the computer architecture.
 * CPU scheduling information- a process priority, pointers to the scheduling queues.
 * Memory management information- the base and limit registers, the page tables, the segmentation tables.
 * Accounting information- the amount of CPU and real time used, time limits, account numbers, process numbers,...
 * I/O status information- list of I/O devices allocated to the process, list of open files, and so on ...
 
-Threads
+## Threads
 -------
 * Threads are processes in a process!!! -multiple executions in the same process environment.
 * Each thread has its own: thread ID, program counter, register set, and stack.
@@ -63,13 +86,13 @@ Threads
 * processes normally start with a single thread present. This thread has the ability to create new threads by calling a library procedure (e.g. thread\_create).
 
 ### Interprocess Communication (Race Condition)
-* How to avoid race condition? 
+* How to avoid race condition?
 * __Mutual exclusion__- some way of making sure that if one process is using a shared variable or file, the other processes will be excluded from using the same variable or file.
 * The choice of the algorithm for achieving mutual exclusion is a major design issue in any operating system.
 * __Critical section__ (critical region) - The part of program where the shared memory is accessed.
 
-### Semaphores - by E. W. Dijkstra 
-* A semaphore is an integer variable which could have value 
+### Semaphores - by E. W. Dijkstra
+* A semaphore is an integer variable which could have value
 * 0:  no wakeups are saved
 * + i: i wakeups are pending
 * A semaphore is accessed only through two standard atomic operations down (or P) and up(or V).
@@ -79,11 +102,11 @@ Threads
 #### The Dining Philosophers Problem
 > Philosophers eat/think
 > Eating needs 2 forks
-> Pick one fork at a time 
-> How to prevent deadlock 
+> Pick one fork at a time
+> How to prevent deadlock
 
 #### The Readers and Writers Problem
-> You want to have a "critical section" where multiple writers are allowed, as well as multiple readers, but at no time should readers and writers be allowed in at the same time. You want a deadlock free, starvation free solution. 
+> You want to have a "critical section" where multiple writers are allowed, as well as multiple readers, but at no time should readers and writers be allowed in at the same time. You want a deadlock free, starvation free solution.
 
 #### The Sleeping Barber Problem
 > In computer science, the sleeping barber problem is a classic inter-process communication and synchronization problem between multiple operating system processes. The problem is analogous to that of keeping a barber working when there are customers, resting when there are none, and doing so in an orderly manner.
@@ -96,9 +119,7 @@ Threads
     + First Come First Serve
     + Shortest Job First
     + Shortest Remaining Job First
-* Process Scheduling Algorithms for Interactive 
+* Process Scheduling Algorithms for Interactive
     + System
     + Round Robin
     + Priority Queue
-
-

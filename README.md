@@ -1,6 +1,6 @@
-# Notes
+# How to push
 ```BASH
-$ git add . 
+$ git add .
 $ git commit -m "Message"
 $ git push
 ```
@@ -140,6 +140,3 @@ Pipe     | $1
 | Column 1 | Column 2      |
 |:--------:| -------------:|
 | centered | right-aligned |
-
-
-

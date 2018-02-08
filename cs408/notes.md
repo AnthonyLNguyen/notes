@@ -1,6 +1,41 @@
 # CS408 Notes
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-Programming Paradigms
+- [CS408 Notes](#cs408-notes)
+	- [Programming Paradigms](#programming-paradigms)
+	- [Compilation and Interpretation](#compilation-and-interpretation)
+		- [Compilation](#compilation)
+	- [Language Evaluation Criteria](#language-evaluation-criteria)
+	- [Syntax and CFG](#syntax-and-cfg)
+		- [Syntax](#syntax)
+			- [What is the syntax of a language?](#what-is-the-syntax-of-a-language)
+			- [What is the semantics of a language?](#what-is-the-semantics-of-a-language)
+			- [What are lexemes?](#what-are-lexemes)
+			- [What are tokens?](#what-are-tokens)
+		- [CFG: series of grammar rules (called productions) such that](#cfg-series-of-grammar-rules-called-productions-such-that)
+		- [Parse Trees](#parse-trees)
+		- [Ambiguous Grammars](#ambiguous-grammars)
+		- [Leftmost Derivation](#leftmost-derivation)
+	- [Variable - 6 attributes](#variable-6-attributes)
+	- [Binding](#binding)
+	- [Row and Column major Addressing](#row-and-column-major-addressing)
+		- [Row major addressing](#row-major-addressing)
+		- [Column major addressing](#column-major-addressing)
+	- [Pointers and References](#pointers-and-references)
+	- [Functional Side Effect](#functional-side-effect)
+	- [Subprograms](#subprograms)
+		- [Subprograms](#subprograms)
+			- [What are subprograms?](#what-are-subprograms)
+			- [Parameter Passing](#parameter-passing)
+				- [Pass by Value](#pass-by-value)
+				- [Pass by Result](#pass-by-result)
+				- [Pass by Value Result](#pass-by-value-result)
+				- [Pass by Reference](#pass-by-reference)
+			- [Overloaded Subprograms](#overloaded-subprograms)
+			- [Activation Record](#activation-record)
+
+<!-- /TOC -->
+## Programming Paradigms
 ---------------------------
 * Functional Programming
 	+ Applies functions to parameters to accomplish task
@@ -19,25 +54,23 @@ Programming Paradigms
 	+ Programming based on the use of classes as objects
   - java, C++, python, ruby
 
-Compilation and Interpretation
+## Compilation and Interpretation
 ---------------------------
 1. The language is brought down to the level of machine
 (compilation)
-    Source code -> machine code
-    Target code run at later time (run time)
+    + Source code -> machine code
+    + Target code run at later time (run time)
 2. The machine is brought up to the level of the language
 (interpretation)
-    interpreter takes a program and its input at the same time.
-    It scans the program, implementing operations as it encounters them and doing I/O as needed .
+    + interpreter takes a program and its input at the same time.
+    + It scans the program, implementing operations as it encounters them and doing I/O as needed.
 
-
-
-### COMPILATION
+### Compilation
 ![Compilation Diagram](compilation.png)
 
 
 
-Language Evaluation Criteria
+## Language Evaluation Criteria
 ---------------------------
 * Readability
 	+ Orthogonality
@@ -72,20 +105,25 @@ Language Evaluation Criteria
 | Exception Handling       |             |            |      x      |
 | Restrictive Aliasing     |             |            |      x      |
 
-Syntax and CFG
+
+
+
+
+
+## Syntax and CFG
 ---------------------------
-### What is the syntax of a language?
-> the form or structure of the expressions, statements, and program units
+### Syntax
+#### What is the syntax of a language?
+* the form or structure of the expressions, statements, and program units
 
-### What is the semantics of a language?
-> the meaning of the expressions, statements, and program units
+#### What is the semantics of a language?
+* the meaning of the expressions, statements, and program units
 
-###	What are lexemes?
-> Small units (words) of a PL used to build up a statement
+####	What are lexemes?
+* Small units (words) of a PL used to build up a statement
 
-###	What are tokens?
-> The category of its lexeme
-
+####	What are tokens?
+* The category of its lexeme
 
 ### CFG: series of grammar rules (called productions) such that
 * Left hand side which is a single structure name, followed by the metasymbol ->, followed by a right hand side
@@ -105,7 +143,11 @@ Syntax and CFG
 ### Ambiguous Grammars
 ### Leftmost Derivation
 
-Variable - 6 attributes
+
+
+
+
+## Variable - 6 attributes
 ---------------------------
  * Name
  * Type
@@ -115,7 +157,11 @@ Variable - 6 attributes
  * Lifetime    Temporal     (how long is the variable bound to the same memory location)
 
 
-Binding
+
+
+
+
+## Binding
 ---------------------------
 * Static - bound to memory cells before execution begins and remains bound to the same memory cell throughout execution.
 	+ Advantage - history sensitive
@@ -131,7 +177,11 @@ Binding
   - used in purely interpreted languages
 	+ Disadvantages - maintaining all dynamic attributes have a high overhead time, loss of error detection.
 
-Row and Column major Addressing
+
+
+
+
+## Row and Column major Addressing
 ---------------------------
 ### Row major addressing
 ```Java
@@ -142,7 +192,11 @@ Location(a[i][j]) = address(a[1][1]) + (i-1)*n*element_size + (j-1)*element_size
 Location(a[i][j]) = address(a[1][1]) + (j-1)*m*element_size + (i-1)*element_size
 ```
 
-Pointers and References
+
+
+
+
+## Pointers and References
 ---------------------------
 A pointer can point to many different objects during its lifetime, a reference can refer to only one object during its lifetime.
 
@@ -157,10 +211,14 @@ delete [] x ;
 cout << *y ;
 ```
 
-Functional Side Effect
+
+
+
+
+## Functional Side Effect
 ---------------------------
 * When a function changes one of its parameter or a global or nonlocal variable
-    + Expression such as a + fun(a) : has a side effect if a is changed by the function fun()
+    + Expression such as `a + fun(a)`  has a side effect if a is changed by the function `fun()`
 
 ```C++
 int a = 4;
@@ -180,8 +238,14 @@ in both the scenarios in C/C++
 Java?
 10 and 23
 
-Subprograms
---------------------------
+
+
+
+
+
+## Subprograms
+---------------------------
+### Subprograms
 #### What are subprograms?
 * Definition
     + A description of the actions of the subprogram abstraction
