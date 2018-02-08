@@ -94,12 +94,14 @@ CS408 Notes
 * Name of structures called nonterminals as they can be broken into further structures
 * Words and token symbols are called terminals, as they are never broken
 * Grammar rules are called productions
-* Symbols used | and sometimes parenthesis (<> or () )
+* Symbols used `|` and sometimes parenthesis (`<>` or `()` )
 * Derivation: generating language sentences through a series of applications of the rules
 * Grammar for Simple Integer Arithmetic Expressions
-	+ expr -> expr + expr | expr * expr | (expr) | number
-	+ number -> number digit | digit  (note recursion here)
-	+ digit -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+```CFG
+	expr -> expr + expr | expr * expr | (expr) | number
+	number -> number digit | digit  (note recursion here)
+	digit -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+```
 * How many terminals, non-terminals and productions in the previous example? 14, 3, 3?
 
 ### Parse Trees
