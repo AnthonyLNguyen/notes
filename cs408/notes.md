@@ -274,7 +274,8 @@ c = NULL ;
 | 2 |-2 |   |            |
 | junk  |   |   | statement7 |
 
-## Functional Side Effect
+## Expressions and Assignment Statements
+### Functional Side Effect
 * When a function changes one of its parameter or a global or nonlocal variable
     + Expression such as `a + fun(a)`  has a side effect if a is changed by the function `fun()`
 
@@ -297,9 +298,25 @@ Java?
 
 `10` and `23`
 
+### Type Conversions
+* Forcing a variable of one type to convert to another type
+* A _narrowing conversion_ is one that converts an object to a type that cannot include all of the values of the original type. e.g., double to int
+* A _widening conversion_ is one in which an object is converted to a type that can include at least approximations to all of the values of the original type. e.g., int to float
+* A _mixed-mode_ expression is one that has operands of different types
 
-
-
+### Coercion
+* Coercion: implicit type conversion
+* Is it good or bad feature to have
+* They decrease in the type error detection ability of the
+compiler
+* In most languages, all numeric types are coerced in
+expressions, using widening conversions
+* In Ada, there are virtually no coercions in expressions
+* Java has half of C++'s 32 coercion rules
+	+ `byte a, b, c;`
+	+ `a = b + c ;` + acts does numeric addition after implicit cast on b and c
+* Explicit type conversion: called a cast
+	+ In C: `(float)a` will convert a to float type
 
 ## Control Structures
 ### Two Categories
@@ -310,7 +327,7 @@ Java?
 * Benefits - enhances writability of the PL
 
 ### switch vs if-else
-* Switch only uses an espresso.
+* Switch only uses an ~~espresso~~ expression.
 * apparently no difference between while and do while, except it will run always once at least
 
 ## Implementing Subprograms
