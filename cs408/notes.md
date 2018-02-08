@@ -1,4 +1,5 @@
-# CS408 Notes
+CS408 Notes
+==============
 
 ## Programming Paradigms
 * Functional Programming
@@ -189,9 +190,11 @@ fun2();
 }
 ```
 
-What are the values of a in fun2
+What are the values of `a` in `fun2`
 in both the scenarios in C/C++
-Java?10 and 23
+Java?
+
+`10` and `23`
 
 
 

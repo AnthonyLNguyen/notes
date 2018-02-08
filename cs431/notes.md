@@ -1,4 +1,5 @@
-# CS431 Notes
+CS431 Notes
+==============
 
 ## Processing and Threads
 
@@ -59,7 +60,7 @@
 * Multiple threads working together -By sharing a set of resources, threads can work together closely to perform some task.
 
 ### Multithreading
-* processes normally start with a single thread present. This thread has the ability to create new threads by calling a library procedure (e.g. thread\_create).
+* processes normally start with a single thread present. This thread has the ability to create new threads by calling a library procedure (e.g. `thread_create`).
 
 ### Interprocess Communication (Race Condition)
 * How to avoid race condition?
