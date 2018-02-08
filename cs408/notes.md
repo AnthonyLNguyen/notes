@@ -204,9 +204,9 @@ sub2() ;
 
 Referencing environment at different points in the code
 
-1. a, b of sub1, c of sub2 and d of main
-2. b and c of sub2 and d of main
-3. c and d of main
+1. `a`, `b` of `sub1`, `c` of `sub2` and `d` of `main`
+2. `b` and `c` of `sub2` and `d` of `main`
+3. `c` and `d` of `main`
 
 
 ## Data types
