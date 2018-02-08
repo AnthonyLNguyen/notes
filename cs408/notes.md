@@ -241,36 +241,31 @@ Java?
 * the protocol of a subprogram is its parameter profile plus something else RETURN TYPE
 
 #### Parameter Passing
-##### Pass by Value
-* Most common mechanism of parameter passing
-* Default in C++ and Pascal and essentially the only parameter passing mechanism in C and Java.
-* Copy of the actual is passed into function
-* Downside is that it uses more memory
-
-##### Pass by Result
-* Implementation of out-mode parameters
-* Before the control is handed back to the caller, the formal parameter is passed to the actual parameter.
-* Downside: parameter collision
-
-##### Pass by Value Result
-* Combines the actions of the IN and OUT parameters
-* Value of actual parameter is used to initialize the corresponding formal parameter
-* Same disadvantages as pass by value and pass by result
-* Pascal VAR parameters
-* Addresses to which to return the values are always calculated on entry of the subprogram
-
-##### Pass by Reference
-* Second implementation for in out mode
-* Transmits an access path, usually
-
-##### Pass by name
-* By textual substitution of formal parameter with the actual parameter in all occurrences in the subprogram.
-	+ Idea is that the argument is not evaluated until its actual use.
-* Formals are bound to an access method at the time of the call,  but actual binding to a value or address takes place at the time of a reference or assignment
-* Purpose: flexibility of late binding
-* To solve: rewrite function by replacing the name of the parameter with the argument
-
-Example:
+* __Pass by Value__
+	* Most common mechanism of parameter passing
+	* Default in C++ and Pascal and essentially the only parameter passing mechanism in C and Java.
+	* Copy of the actual is passed into function
+	* Downside is that it uses more memory
+* __Pass by Result__
+	* Implementation of out-mode parameters
+	* Before the control is handed back to the caller, the formal parameter is passed to the actual parameter.
+	* Downside: parameter collision
+* __Pass by Value Result__
+	* Combines the actions of the IN and OUT parameters
+	* Value of actual parameter is used to initialize the corresponding formal parameter
+	* Same disadvantages as pass by value and pass by result
+	* Pascal VAR parameters
+	* Addresses to which to return the values are always calculated on entry of the subprogram
+* __Pass by Reference__
+	* Second implementation for in out mode
+	* Transmits an access path, usually
+* __Pass by name__
+	* By textual substitution of formal parameter with the actual parameter in all occurrences in the subprogram.
+		+ Idea is that the argument is not evaluated until its actual use.
+		* Formals are bound to an access method at the time of the call,  but actual binding to a value or address takes place at the time of a reference or assignment
+		* Purpose: flexibility of late binding
+		* To solve: rewrite function by replacing the name of the parameter with the argument
+	* Example:
 ```C++
 int p(int y);
 int j = y
@@ -311,7 +306,6 @@ return (j + i + j);
     + Local offset - count from bottom of subs ARI to the location below the one with the var in it
 
 ##### Example
-
 ```Pascal
 program MAIN_2;
 	var X : integer;
@@ -343,13 +337,11 @@ end. { MAIN_2 }
 ```
 Call sequence for `MAIN_2`
 
-`MAIN_2` calls `BIGSUB`
+1. `MAIN_2` calls `BIGSUB`
+2. `BIGSUB` calls `SUB2`
+3. `SUB2` calls `SUB3`
+4. `SUB3` calls `SUB1`
 
-`BIGSUB` calls `SUB2`
-
-`SUB2` calls `SUB3`
-
-`SUB3` calls `SUB1`
-
+`MAIN_2` > `BIGSUB` > `SUB2` > `SUB3`
 
 ![ARI](ARIstack.JPG)
