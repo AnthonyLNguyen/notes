@@ -249,7 +249,7 @@ cout <<*x<< "\t"<< *y << endl ; // statement 2
 cout << *x << endl ; // statement 3
 *(++z) = *(--y) + *x ;
 cout << *z << endl ; // statement 4
-*y++ = *&b[2]*(*--z) ;
+*y++ = *&b[2]*(* --z);
 cout << *y << endl ; // statement 5
 c = new int ;
 *c = 2 ;
@@ -262,6 +262,17 @@ c = NULL ;
 
 ##### Pointers Well Understood
 
+|   |   |   |            |
+|:-:|:-:|:-:|------------|
+| 0 | 1 | 2 | statement1 |
+| 0 | 2 |   | statement2 |
+|-3 |   |   | statement3 |
+|-2 |   |   | statement4 |
+| 2 |   |   | statement5 |
+|-3 | 1 |   | statement6 |
+| 8 |-4 |   |            |
+| 2 |-2 |   |            |
+| junk  |   |   | statement7 |
 
 ## Functional Side Effect
 * When a function changes one of its parameter or a global or nonlocal variable
