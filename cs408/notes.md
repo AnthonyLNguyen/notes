@@ -181,7 +181,7 @@ Referencing environment at different points in the code
 3. `x` of `sub2` and `a` and `b` of `big`
 4. `a` and `b` of `big`
 
-Is scope of sub1 a static ancestor of sub3?
+Is scope of `sub1` a static ancestor of `sub3`?
 
 
 ### Dynamic
