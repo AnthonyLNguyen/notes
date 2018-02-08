@@ -23,8 +23,8 @@
 		- [Process Scheduling](#process-scheduling)
 
 <!-- /TOC -->
+---------------------------
 ## Processing and Threads
-----------------------
 
 ### The Processes
 * Multiprogramming
@@ -72,8 +72,8 @@
 * Accounting information- the amount of CPU and real time used, time limits, account numbers, process numbers,...
 * I/O status information- list of I/O devices allocated to the process, list of open files, and so on ...
 
+---------------------------
 ## Threads
--------
 * Threads are processes in a process!!! -multiple executions in the same process environment.
 * Each thread has its own: thread ID, program counter, register set, and stack.
 * Different threads are not quite as independent as different processes since they share same address space.

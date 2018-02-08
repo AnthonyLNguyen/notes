@@ -35,8 +35,8 @@
 			- [Activation Record](#activation-record)
 
 <!-- /TOC -->
-## Programming Paradigms
 ---------------------------
+## Programming Paradigms
 * Functional Programming
 	+ Applies functions to parameters to accomplish task
 	+ Computation is specified by a call to defined functions which are calls to other functions
@@ -54,8 +54,8 @@
 	+ Programming based on the use of classes as objects
   - java, C++, python, ruby
 
-## Compilation and Interpretation
 ---------------------------
+## Compilation and Interpretation
 1. The language is brought down to the level of machine
 (compilation)
     + Source code -> machine code
@@ -69,9 +69,8 @@
 ![Compilation Diagram](compilation.png)
 
 
-
-## Language Evaluation Criteria
 ---------------------------
+## Language Evaluation Criteria
 * Readability
 	+ Orthogonality
 	+ Non-orthogonality
@@ -109,9 +108,8 @@
 
 
 
-
-## Syntax and CFG
 ---------------------------
+## Syntax and CFG
 ### Syntax
 #### What is the syntax of a language?
 * the form or structure of the expressions, statements, and program units
@@ -146,9 +144,8 @@
 
 
 
-
-## Variable - 6 attributes
 ---------------------------
+## Variable - 6 attributes
  * Name
  * Type
  * Address
@@ -159,10 +156,8 @@
 
 
 
-
-
-## Binding
 ---------------------------
+## Binding
 * Static - bound to memory cells before execution begins and remains bound to the same memory cell throughout execution.
 	+ Advantage - history sensitive
 	+ Disadvantage - no recursive functions for languages that use only static variable
@@ -180,9 +175,8 @@
 
 
 
-
-## Row and Column major Addressing
 ---------------------------
+## Row and Column major Addressing
 ### Row major addressing
 ```Java
 Location(a[i][j]) = address(a[1][1]) + (i-1)*n*element_size + (j-1)*element_size
@@ -195,9 +189,8 @@ Location(a[i][j]) = address(a[1][1]) + (j-1)*m*element_size + (i-1)*element_size
 
 
 
-
-## Pointers and References
 ---------------------------
+## Pointers and References
 A pointer can point to many different objects during its lifetime, a reference can refer to only one object during its lifetime.
 
 Dangling Pointer
@@ -214,9 +207,8 @@ cout << *y ;
 
 
 
-
-## Functional Side Effect
 ---------------------------
+## Functional Side Effect
 * When a function changes one of its parameter or a global or nonlocal variable
     + Expression such as `a + fun(a)`  has a side effect if a is changed by the function `fun()`
 
@@ -242,9 +234,8 @@ Java?
 
 
 
-
-## Subprograms
 ---------------------------
+## Subprograms
 ### Subprograms
 #### What are subprograms?
 * Definition
