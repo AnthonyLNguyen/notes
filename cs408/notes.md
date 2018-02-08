@@ -426,8 +426,8 @@ program MAIN_2;
 			procedure SUB1;
 				var A, D : integer;
 				begin { SUB1 }
-						A := B + C; //<---------------1
-						end; { SUB1 }
+					A := B + C; //<---------------1
+				end; { SUB1 }
 			procedure SUB2(X : integer);
 			var B, E : integer;
 			procedure SUB3;
