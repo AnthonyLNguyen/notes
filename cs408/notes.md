@@ -371,7 +371,7 @@ expressions, using widening conversions
 * __Pass by Reference__
 	* Second implementation for in out mode
 	* Transmits an access path, usually
-* __Pass by name__
+* __Pass by Name__
 	* By textual substitution of formal parameter with the actual parameter in all occurrences in the subprogram.
 		+ Idea is that the argument is not evaluated until its actual use.
 		* Formals are bound to an access method at the time of the call,  but actual binding to a value or address takes place at the time of a reference or assignment
