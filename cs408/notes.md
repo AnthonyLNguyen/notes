@@ -2,31 +2,31 @@ CS408 Notes
 ==============
 
 ## Programming Paradigms
-* Functional Programming
+* __Functional Programming__
 	+ Applies functions to parameters to accomplish task
 	+ Computation is specified by a call to defined functions which are calls to other functions
   - LISP, Scheme, ML
-* Imperative Programming
+* __Imperative Programming__
 	+ commands, action oriented
 	+ sharp distinction between action and data
 	+ no/limited support for abstraction
   - Fortran, Algol60, Pascal, Ada, C
-* Logic Programming
+* __Logic Programming__
 	+ Predicate logic calculus
 	+ axioms (facts) and rules to deduce new facts
   - prolog, prolog++
-* Object Oriented Programming
+* __Object Oriented Programming__
 	+ Programming based on the concept of "objects", which may contain data, in the form of fields, often known as attributes; and code, in the form of procedures, often known as methods.
   - java, C++, python, ruby
 
 
 ## Compilation and Interpretation
 1. The language is brought down to the level of machine
-(compilation)
+(__compilation__)
     + Source code -> machine code
     + Target code run at later time (run time)
 2. The machine is brought up to the level of the language
-(interpretation)
+(__interpretation__)
     + interpreter takes a program and its input at the same time.
     + It scans the program, implementing operations as it encounters them and doing I/O as needed.
 
@@ -37,25 +37,32 @@ CS408 Notes
 
 ## Language Evaluation Criteria
 * Readability
-	+ Orthogonality
-	+ Non-orthogonality
-	+ Regularity
-	+ Generality
-	+ Uniformity
-	+ Nonuniformity
-	+ Syntax Considerations
+	+ __Orthogonality__
+		- Orthogonality in programming languages means that language components are independent of each other and they behave the same way in any circumstance, e.g., types vs functions.
+	+ __Non-orthogonality__
+	+ __Regularity__
+		-	Defined as how well the features of a language are integrated
+		-	Greater regularity- implies fewer restrictions on the use of particular constructs, fewer strange interactions between constructs and fewer surprises in general in the way the language behaves
+	+ __Generality__
+		- Language achieves generality by avoiding special cases in the availability or use of constructs and by combining closely related constructs into a single or more general one
+	+ __Uniformity__
+		- This principle focuses on the consistency of appearance and behavior of language constructs
+	+ __Nonuniformity__
+		- Similar things do not look similar or behave similarly
+		- Dissimilar things actually look similar or behave similarly when they should not
+	+ __Syntax Considerations__
 * Writability
-	+ Orthogonality
-	+ Abstraction
-	+ Expressivity
+	+ __Orthogonality__
+	+ __Abstraction__
+	+ __Expressivity__
 * Reliability
-	+ Type Checking
-	+ Exception Handling
-	+ Aliasing
-	+ Readability and Writability
-* Portability
-* Generality
-* Completeness
+	+ __Type Checking__
+	+ __Exception Handling__
+	+ __Aliasing__
+	+ __Readability and Writability__
+* __Portability__
+* __Generality__
+* __Completeness__
 
 | Characteristic           | Readability | Writablity | Reliability |
 |--------------------------|:-----------:|:----------:|:-----------:|
@@ -76,16 +83,16 @@ CS408 Notes
 
 ## Syntax and CFG
 ### Syntax
-#### What is the syntax of a language?
+What is the syntax of a language?
 * the form or structure of the expressions, statements, and program units
 
-#### What is the semantics of a language?
+What is the semantics of a language?
 * the meaning of the expressions, statements, and program units
 
-####	What are lexemes?
+What are lexemes?
 * Small units (words) of a PL used to build up a statement
 
-####	What are tokens?
+What are tokens?
 * The category of its lexeme
 
 ### CFG: series of grammar rules (called productions) such that
@@ -334,10 +341,10 @@ program MAIN_2;
 	BIGSUB;
 end. { MAIN_2 }
 ```
-Call sequence for MAIN_2
->MAIN_2 calls BIGSUB
-BIGSUB calls SUB2
-SUB2 calls SUB3
-SUB3 calls SUB1
+Call sequence for `MAIN_2`
+`MAIN_2` calls `BIGSUB`
+`BIGSUB` calls `SUB2`
+`SUB2` calls `SUB3`
+`SUB3` calls `SUB1`
 
 ![ARI](ARIstack.JPG)
