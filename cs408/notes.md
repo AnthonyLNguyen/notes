@@ -58,7 +58,7 @@ CS408 Notes
 * Completeness
 
 | Characteristic           | Readability | Writablity | Reliability |
-|--------------------------|-------------|------------|-------------|
+|--------------------------|:-----------:|:----------:|:-----------:|
 | Simplicity/Orthogonality |      x      |      x     |      x      |
 | Control Structures       |      x      |      x     |      x      |
 | Data type/Structures     |      x      |      x     |      x      |
