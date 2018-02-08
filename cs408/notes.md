@@ -227,8 +227,7 @@ fun2();
 
 What are the values of a in fun2
 in both the scenarios in C/C++
-Java?
-10 and 23
+Java?10 and 23
 
 
 
