@@ -112,7 +112,8 @@ CS408 Notes
 
 
 
-## Variable - 6 attributes
+## Variables
+### 6 Attributes
  * Name
  * Type
  * Address
@@ -124,17 +125,17 @@ CS408 Notes
 
 
 
-## Binding
-* Static - bound to memory cells before execution begins and remains bound to the same memory cell throughout execution.
+### Binding
+* __Static__ - bound to memory cells before execution begins and remains bound to the same memory cell throughout execution.
 	+ Advantage - history sensitive
 	+ Disadvantage - no recursive functions for languages that use only static variable
-* Stack-dynamic - Storage bindings are created for variables when their declaration statements are elaborated, which is during run time
+* __Stack-dynamic__ - Storage bindings are created for variables when their declaration statements are elaborated, which is during run time
 	+ Advantage - allows recursion, saves memory/storage
 	+ Disadvantage - run-time allocation/deallocation, loss of history sensitivity.
-* Heap-dynamic - Allocated and unallocated by explicit directives, specified by the programmer, which take effect during execution
+* __Heap-dynamic__ - Allocated and unallocated by explicit directives, specified by the programmer, which take effect during execution
 	+ Advantage: flexibility of efficient memory management
 	+ Disadvantage: error-prone use of pointers and references
-* Implicit heap-dynamic variables: Allocation and deallocation caused by assignment statements
+* __Implicit heap-dynamic variables__ - Allocation and deallocation caused by assignment statements
 	+ Advantages - help in writing generic code, highly flexible
   - used in purely interpreted languages
 	+ Disadvantages - maintaining all dynamic attributes have a high overhead time, loss of error detection.
