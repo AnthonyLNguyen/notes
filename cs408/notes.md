@@ -299,3 +299,42 @@ return (j + i + j);
 
 * However many static links you follow in the ARI to get to the place where the variable is declared is the offset
     + Local offset - count from bottom of subs ARI to the location below the one with the var in it
+
+##### Example
+
+```Pascal
+program MAIN_2;
+	var X : integer;
+	procedure BIGSUB;
+			var A, B, C : integer;
+			procedure SUB1;
+				var A, D : integer;
+				begin { SUB1 }
+							A := B + C; <-----------------------1
+						end; { SUB1 }
+			procedure SUB2(X : integer);
+			var B, E : integer;
+			procedure SUB3;
+				var C, E : integer;
+				begin { SUB3 }
+					SUB1;
+					E := B + A: <--------------------2
+				end; { SUB3 }
+			begin { SUB2 }
+				SUB3;
+				A := D + E; <-----------------------3
+			end; { SUB2 }
+		begin { BIGSUB }
+		SUB2(7);
+		end; { BIGSUB }
+	begin
+	BIGSUB;
+	end. { MAIN_2 }
+```
+Call sequence for MAIN_2
+>MAIN_2 calls BIGSUB
+BIGSUB calls SUB2
+SUB2 calls SUB3
+SUB3 calls SUB1
+
+![ARI](ARIstack.JPG)
