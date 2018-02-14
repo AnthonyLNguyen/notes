@@ -457,3 +457,83 @@ Call sequence for `MAIN_2`
 `MAIN_2` > `BIGSUB` > `SUB2` > `SUB3`
 
 ![ARI](ARIstack.JPG)
+
+
+### Displays
+* Collect all static links into a global array of pointers called display
+* When you call a new program, add the pointer to the display array
+* Display offset is similar to chain offset, and is used to link to the correct ARI and then a local offset is used to find the location of the variable
+* Display offset only depends on the static depth of the procedure in which the nonlocal reference appears
+### Display Modification
+* Let PSD be the static depth of P, and QSD be the static depth of Q
+* Assume Q calls P
+* There are three possible cases
+    + QSD = PSD Page 25
+    + QSD < PSD Page 28
+    + QSD > PSD 
+
+```Pascal
+program MAIN_3;
+    procedure BIGSUB;
+        procedure SUB1;
+        end; { SUB1 }
+        procedure SUB2;
+            procedure SUB3;
+            end; { SUB3 }
+        end; { SUB2 }
+    end; { BIGSUB }
+end. { MAIN_3 }
+```
+
+#### Case Qsd=Psd
+* `SUB2` calls `SUB1` as they are both at depth 2. Display shown just before and just after the call.
+![qsd=psd](qsdeqpsd.png)
+
+* Display links of SUB1 and SUB2 must occupy same position in the display array
+* Display link stored in the new activation record, the position 2 in the array points to the ARI of SUB1
+* When SUB1 finishes executing, the link is reset to the ARI of SUB2 at position 2.
+
+#### Case Qsd\<Psd (nontrivial case)
+
+* Consider the following example which has an extra procedure called 
+`SUB4` 
+
+```Pascal
+program MAIN_4;
+    procedure BIGSUB;
+        procedure SUB1;
+            procedure SUB4;
+            end; { SUB4 }
+        end; { SUB1 }
+        procedure SUB2;
+            procedure SUB3;
+            end; { SUB3 }
+        end; { SUB2 }
+    end; { BIGSUB }
+end. { MAIN_4 }
+```
+
+Execution has the following sequence of calls
+`MAIN_4` calls `BIGSUB`
+`BIGSUB` calls `SUB2`
+`SUB2` calls `SUB3`
+`SUB3` calls `SUB1`
+
+![qsdltpsd](qsdltpsd.png)
+
+#### Case Qsd\>Psd
+
+![qsdgtpsd](qsdgtpsd.png)
+
+### Static Chain vs Display Methods
+* The display can be kept in registers, if there are enough--it speeds up access and maintenance
+* References to locals 
+	+ Not much difference
+* References to nonlocals
+	+ If it is one level away, they are equal
+	+ If it is farther away, the display is faster
+	+ Display is better for time-critical code, because all nonlocal references cost the same
+* Procedure calls
+	+ For one or two levels of depth, static chain is faster, else, the display is faster
+
+
