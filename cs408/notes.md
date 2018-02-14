@@ -536,4 +536,65 @@ Execution has the following sequence of calls
 * Procedure calls
 	+ For one or two levels of depth, static chain is faster, else, the display is faster
 
+### Implementing Blocks
 
+* Two Methods:
+* Treat blocks as parameterless subprograms
+	+ Use activation records for each block
+	+ An instance of its activation record is created each time a block is entered
+* Blocks can be implemented in another simpler way:
+* Max storage can be determined statically
+	+ Blocks are entered and exited in a strictly textual order
+	+ This amount of space can be allocated after the local variables in the ARI
+	+ Offsets for all block variables can be statically computed and hence can be addressed as if they were local variables
+
+Implementing Blocks
+* Note f and g occupy the same memory locations as a 
+and b. Why?
+* Because a and b are popped of the stack when their 
+block is exited (i.e. before f and g are allocated)
+
+```C++
+void main(){
+    int x,y,z;
+    while(..){
+        int a,b,c;
+        ..
+        while(..){
+            int d, e;
+            ..
+        }
+    }
+    while(..){
+        int f,g;
+        ..
+    }
+    ...
+}
+```
+
+![blocks](blocks.png)
+
+### Dynamic Scoping
+![dynamicscoping](dynscope.png)
+
+* Deep Access - nonlocal references are found by searching the activation record instances on  the dynamic chain 
+
+* Shallow Access - variables declared in subprograms are not stored in the ARIs of those subprograms
+	+ Since only one visible version of the variable is present at any given time because of dynamic scoping
+* Use of one stack for each variable name
+* Push the most recent subprogram name for each variable into the stack and pop it after the subprogram is terminated
+![shallowaccess](shallow.png)
+
+* Another method for shallow access is the use of a central table
+	+ Place all local variables for a subprogram in central table and mark it as active (using a mark bit with each variable)
+	+ When a new variable comes in with same name, store the previously active variable somewhere else during the lifetime of the current variable
+	+ Different languages used different implementations of shallow-access
+* Choice between shallow and deep access depends on the relative frequencies of access to nonlocal variables and subprogram calls.
+	+ Deep access provides fast subprogram linkage but slower nonlocal access while shallow access is the reverse, as it provides fast access to distant nonlocals
+
+#### Dynamic vs. Static Scoping
+* Two reasons for dynamically scoped languages are slower than statically(lexically) scoped languages
+* Firstly, Dynamically scoped languages are slower than statically scoped languages since the dynamic chain has to be searched for the first instance of the variable
+* Secondly, activation records must store variable names as well unlike in statically scoped languages where only the values are required
+* the (chain\_offset, local\_offset) is used to represent each variable, and not the nam
