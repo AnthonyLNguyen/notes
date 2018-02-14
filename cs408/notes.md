@@ -489,9 +489,9 @@ end. { MAIN_3 }
 * `SUB2` calls `SUB1` as they are both at depth 2. Display shown just before and just after the call.
 ![qsd=psd](qsdeqpsd.png)
 
-* Display links of SUB1 and SUB2 must occupy same position in the display array
-* Display link stored in the new activation record, the position 2 in the array points to the ARI of SUB1
-* When SUB1 finishes executing, the link is reset to the ARI of SUB2 at position 2.
+* Display links of `SUB1` and `SUB2` must occupy same position in the display array
+* Display link stored in the new activation record, the position 2 in the array points to the ARI of `SUB1`
+* When `SUB1` finishes executing, the link is reset to the ARI of `SUB2` at position 2.
 
 #### Case Qsd\<Psd (nontrivial case)
 
