@@ -599,6 +599,17 @@ int v, u ;
 ```
 
 * Deep Access - nonlocal references are found by searching the activation record instances on  the dynamic chain
+	+ Length of chain cannot be statically determined
+	+ Every activation record instance must have variable names (unlike static-scoped languages where only values are required since the variables are represented by chain_offset, local_offset)
+
+`MAIN_6` calls `A`
+
+`A` calls `A`
+
+`A` calls `B`
+
+`B` calls `C`
+
 
 * Shallow Access - variables declared in subprograms are not stored in the ARIs of those subprograms
 	+ Since only one visible version of the variable is present at any given time because of dynamic scoping
