@@ -549,10 +549,10 @@ Execution has the following sequence of calls
 	+ Offsets for all block variables can be statically computed and hence can be addressed as if they were local variables
 
 Implementing Blocks
-* Note f and g occupy the same memory locations as a
-and b. Why?
-* Because a and b are popped of the stack when their
-block is exited (i.e. before f and g are allocated)
+* Note `f` and `g` occupy the same memory locations as `a`
+and `b`. Why?
+* Because `a` and `b` are popped of the stack when their
+block is exited (i.e. before `f` and `g` are allocated)
 
 ```C++
 void main(){
