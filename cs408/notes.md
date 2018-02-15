@@ -610,6 +610,7 @@ int v, u ;
 
 `B` calls `C`
 
+![deep](deep.JPG)
 
 * Shallow Access - variables declared in subprograms are not stored in the ARIs of those subprograms
 	+ Since only one visible version of the variable is present at any given time because of dynamic scoping
