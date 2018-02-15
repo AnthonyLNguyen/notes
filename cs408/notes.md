@@ -318,9 +318,9 @@ expressions, using widening conversions
 * In Ada, there are virtually no coercions in expressions
 * Java has half of C++'s 32 coercion rules
 	+ `byte a, b, c;`
-	+ `a = b + c ;` + acts does numeric addition after implicit cast on b and c
+	+ `a = b + c ;` `+` acts does numeric addition after implicit cast on `b` and `c`
 * Explicit type conversion: called a cast
-	+ In C: `(float)a` will convert a to float type
+	+ In C: `(float)a` will convert `a` to float type
 
 ## Control Structures
 ### Two Categories
