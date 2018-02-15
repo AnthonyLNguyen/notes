@@ -597,7 +597,7 @@ int v, u ;
 …
 }
 ```
-
+#### Deep Access
 * Deep Access - nonlocal references are found by searching the activation record instances on  the dynamic chain
 	+ Length of chain cannot be statically determined
 	+ Every activation record instance must have variable names (unlike static-scoped languages where only values are required since the variables are represented by chain_offset, local_offset)
@@ -612,6 +612,8 @@ int v, u ;
 
 ![deep](deep.JPG)
 
+
+#### Shallow Access
 * Shallow Access - variables declared in subprograms are not stored in the ARIs of those subprograms
 	+ Since only one visible version of the variable is present at any given time because of dynamic scoping
 * Use of one stack for each variable name
@@ -629,4 +631,4 @@ int v, u ;
 * Two reasons for dynamically scoped languages are slower than statically(lexically) scoped languages
 * Firstly, Dynamically scoped languages are slower than statically scoped languages since the dynamic chain has to be searched for the first instance of the variable
 * Secondly, activation records must store variable names as well unlike in statically scoped languages where only the values are required
-* the (chain\_offset, local\_offset) is used to represent each variable, and not the nam
+* the (chain\_offset, local\_offset) is used to represent each variable, and not the name
