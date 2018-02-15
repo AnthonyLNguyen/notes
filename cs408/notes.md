@@ -470,7 +470,7 @@ Call sequence for `MAIN_2`
 * There are three possible cases
     + QSD = PSD Page 25
     + QSD < PSD Page 28
-    + QSD > PSD 
+    + QSD > PSD
 
 ```Pascal
 program MAIN_3;
@@ -495,8 +495,8 @@ end. { MAIN_3 }
 
 #### Case Qsd\<Psd (nontrivial case)
 
-* Consider the following example which has an extra procedure called 
-`SUB4` 
+* Consider the following example which has an extra procedure called
+`SUB4`
 
 ```Pascal
 program MAIN_4;
@@ -527,7 +527,7 @@ Execution has the following sequence of calls
 
 ### Static Chain vs Display Methods
 * The display can be kept in registers, if there are enough--it speeds up access and maintenance
-* References to locals 
+* References to locals
 	+ Not much difference
 * References to nonlocals
 	+ If it is one level away, they are equal
@@ -549,9 +549,9 @@ Execution has the following sequence of calls
 	+ Offsets for all block variables can be statically computed and hence can be addressed as if they were local variables
 
 Implementing Blocks
-* Note f and g occupy the same memory locations as a 
+* Note f and g occupy the same memory locations as a
 and b. Why?
-* Because a and b are popped of the stack when their 
+* Because a and b are popped of the stack when their
 block is exited (i.e. before f and g are allocated)
 
 ```C++
@@ -578,7 +578,27 @@ void main(){
 ### Dynamic Scoping
 ![dynamicscoping](dynscope.png)
 
-* Deep Access - nonlocal references are found by searching the activation record instances on  the dynamic chain 
+```C++
+void C() {
+int x, z ;
+x = u+v ;
+…
+}
+void B() {
+int w, x ;
+…
+}
+void A() {
+int v, w ;
+…
+}
+void main() {
+int v, u ;
+…
+}
+```
+
+* Deep Access - nonlocal references are found by searching the activation record instances on  the dynamic chain
 
 * Shallow Access - variables declared in subprograms are not stored in the ARIs of those subprograms
 	+ Since only one visible version of the variable is present at any given time because of dynamic scoping
