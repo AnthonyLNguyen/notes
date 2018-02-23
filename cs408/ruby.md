@@ -148,4 +148,70 @@ STDOUT:
 [1,2,3,4,5,6,7].delete_if{|i| i < 4 } # Deletes all greater than 4
 ```
 
+* `for` loops and `each` loops
+
+```Ruby
+array = [1, 2, 3, 4, 5]
+
+for i in array
+  puts i
+end
+
+array.each do |i|
+  puts i
+end
+
+STDOUT:
+1
+2
+3
+4
+5
+```
+
+### Hashes
+
+```Ruby
+salaries = {
+"Bob" => 69000,
+"Jack" => 82000,
+"John" => 120000
+}
+
+puts salaries["Jack"]
+
+STDOUT:
+82000
+```
+
+## Classes
+* Ruby allows one to define classes of objects.
+* To look up an objects class use the `class` method
+* To ask an object if it is a certain class use the `is_a?` method
+
+```
+puts 2.class
+puts 2.is_a?(Integer)
+
+STDOUT:
+Integer
+true
+```
+### Class Example
+```Ruby
+class Rectangle
+  def initialize(length, breadth)
+    @length = length
+    @breadth = breadth
+  end
+
+  def perimeter
+    2 * (@length + @breadth)
+  end
+  def area
+    @length * @breadth
+  end
+end
+```
+
 
