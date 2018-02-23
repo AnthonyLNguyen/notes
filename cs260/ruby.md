@@ -1,0 +1,151 @@
+# Ruby
+
+## Objects
+* In Ruby, everything is an object - integers, characters, text, arrays - everything.
+* Objects interact with another using method calling with a (`.`) after the object.
+Example:
+```Ruby
+2.even?
+
+STDOUT:
+true
+```
+
+## Methods
+* Can look up all the methods of an object using `methods` and the `sort` command to sort them.
+Example
+```Ruby
+2.methods.sort
+
+STDOUT:
+[:!, :!=, :!~, :%, :&, :*, :**, :+, :+@, :-, :-@, :/, :<, :<<, :<=, :<=>, :==, :===, :=~, :>, :>=, :>>, :[], :^, :__id__, :__send__, :`, :abs, :abs2, :acts_like?, :ago, :angle
+...
+
+```
+
+* Methods can also have arguments
+```Ruby
+['rock','paper','scissors'].index('paper')
+
+STDOUT:
+1
+```
+* Since everything in an object in Ruby, mathematical operators can also be invoked using methods. Of course, Ruby makes an exception in its syntactic rules for commonly used operators so you don't have to use periods to invoke them on objects.
+```Ruby
+2.+(4) # these are the same
+2 + 4
+
+SDTOUT:
+6
+6
+```
+
+## Strings
+
+### String Interpolation
+
+```Ruby
+a = 1
+b = 4
+puts "The number #{a} is less than #{b}"
+```
+
+* Any valid block of Ruby code you place inside #{} will be evaluated and inserted at that location.
+
+### Useful Methods
+* `include?`
+* `start_with?`
+* `ends_with?`
+* `index`
+* `downcase`
+* `swapcase`
+* `split`
+* `concat` or `+`
+* `sub` and `gsub`
+* `match`
+
+## Control Structures
+
+### if..else
+
+```Ruby
+def check_sign(number)
+  if number == 0
+    number
+  elsif number > 0
+    "#{number} is positive"
+  else
+    "#{number} is negative"
+  end        
+end        
+```
+
+* Also can use `unless x` which is equivalent to `if !x`
+
+* You can put the if statement after the body.
+```Ruby
+a = true
+puts "a is true" if a == true
+
+```
+is equivalent to
+```Ruby
+a = true
+if a == true
+    puts "a is true"
+end
+```
+#### Truth
+* Only `false` and `nil` equate to false in Ruby. Objects such as `1`, `0`, `""` are considered to be `true`
+
+
+
+### Loops
+
+* `loop` will loop until `break`
+```Ruby
+loop do
+    a.next # increments a by 1
+    break if a == 100
+end
+```
+* `times` will allows us to loop a certain amount of times
+```Ruby
+3.times do
+    puts "Hello World"
+end
+
+SDTOUT:
+Hello World
+Hello World
+Hello World
+```
+
+## Arrays
+
+### Array Methods
+* The `map` method is used to transform the contents of an array
+
+```Ruby
+[1, 2, 3, 4, 5].map { |i| i + 1 }
+
+STDOUT:
+[2, 3, 4, 5, 6]
+```
+
+* `select` can be usd to filter elements of an Array
+```Ruby
+[1,2,3,4,5,6].select {|number| number % 2 == 0}
+
+STDOUT:
+[2, 4, 6]
+```
+
+* `delete` is used to delete elements
+
+```Ruby
+[1,3,5,4,6,7].delete 5 # Deletes the number 5
+[1,2,3,4,5,6,7].delete_if{|i| i < 4 } # Deletes all greater than 4
+```
+
+
