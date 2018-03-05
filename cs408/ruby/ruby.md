@@ -7,8 +7,9 @@
 * Clean and intuitive syntax.
 
 ## Scoping
+
 | Name Begins with  | Variable Scope        |
-|:==================|:======================|
+|:------------------|:----------------------|
 |`$`                |A global variable      |
 |`@`                |An instance variable   |
 |`[a-z]` or `_`     |A local variable       |
