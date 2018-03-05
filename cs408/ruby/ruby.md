@@ -29,6 +29,28 @@ STDOUT:
 true
 ```
 
+## Exceptions
+### begin - rescue - end
+```Ruby
+def ex
+    raise Exception.new("Test exception")
+end
+
+begin
+    ex
+    puts "This line won't print"
+rescue Exception
+    puts "Exception rescued!"
+ensure
+    puts "This line prints no matter what"
+end
+
+STDOUT:
+Exception rescued!
+This line prints no matter what
+
+```
+
 ## Methods
 * Can look up all the methods of an object using `methods` and the `sort` command to sort them.
 Example
