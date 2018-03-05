@@ -204,8 +204,8 @@ end
 def check_sign(number)
   case number
   when 0 then puts number
-  when 1..100 puts "#{number} is positive"
-  when -100..-1 puts "#{number} is negative"
+  when 1..100 then puts "#{number} is positive"
+  when -100..-1 then puts "#{number} is negative"
   else puts "Unexpected value"
   end        
 end        
