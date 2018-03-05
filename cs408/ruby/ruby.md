@@ -6,6 +6,44 @@
 * Ruby employs dynamic typing.
 * Clean and intuitive syntax.
 
+## Data Types
+
+* Because everything in Ruby is an object, there are no primitive data types.
+* Ruby has 8 primary data types and 3 derived from the Numeric superclass.
+```Ruby
+
+h = { :name => "Jane", :age => 17 }
+
+puts true.class, false.class
+puts "String".class
+puts 1.class
+puts 1.class.superclass
+puts 1.class.superclass.superclass
+puts 4.3.class
+puts 4.3.class.superclass
+puts nil.class
+puts h.class
+puts :symbol.class
+puts [].class
+puts (1..8).class
+
+
+STDOUT:
+TrueClass
+FalseClass
+String
+Integer
+Numeric
+Object
+Float
+Numeric
+NilClass
+Hash
+Symbol
+Array
+Range
+```
+
 ## Scoping
 
 * Statically scoped
@@ -17,6 +55,29 @@
 |`[a-z]` or `_`     |A local variable       |
 |`[A-Z]`            |A constant             |
 |`@@`               |A class variable       |
+
+```Ruby
+class Test
+    $global = 1
+    @instance = 2
+    local = 3
+    Constant = 4
+    @@class = 5
+    puts defined?($global)
+    puts defined?(@instance)
+    puts defined?(local)
+    puts defined?(Constant)
+    puts defined?(@@class)
+end
+
+STDOUT:
+global-variable
+instance-variable
+local-variable
+constant
+class variable
+
+```
 
 ## Objects
 * In Ruby, everything is an object - integers, characters, text, arrays - everything.
