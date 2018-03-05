@@ -398,7 +398,7 @@ STDOUT:
 
 * Set a variable to a lambda function
 
-```
+```Ruby
 s = lambda do |num|
     num ** 2
 end
