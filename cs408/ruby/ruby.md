@@ -1,5 +1,20 @@
 # Ruby
 
+## Features of Ruby
+* Ruby is primarily an object-oriented programming language but also supports imperative and functional paradigms.
+* Purely interpreted language.
+* Ruby employs dynamic typing.
+* Clean and intuitive syntax.
+
+## Scoping
+| Name Begins with  | Variable Scope        |
+|:==================|:======================|
+|`$`                |A global variable      |
+|`@`                |An instance variable   |
+|`[a-z]` or `_`     |A local variable       |
+|`[A-Z]`            |A constant             |
+|`@@`               |A class variable       |
+
 ## Objects
 * In Ruby, everything is an object - integers, characters, text, arrays - everything.
 * Objects interact with another using method calling with a (`.`) after the object.
