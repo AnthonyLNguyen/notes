@@ -214,4 +214,33 @@ class Rectangle
 end
 ```
 
+## Methods
+
+```Ruby
+def square(num)
+    return num ** 2
+end
+sq(3)
+
+STDOUT:
+9
+```
+
+
+```Ruby
+def add(*numbers)
+  numbers.inject(0) { |sum, number| sum + number }
+end
+
+puts add(1)
+puts add(1, 2)
+puts add(1, 2, 3)
+puts add(1, 2, 3, 4)
+
+STDOUT:
+1
+3
+6
+10
+```
 
