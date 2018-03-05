@@ -172,11 +172,13 @@ puts "The number #{a} is less than #{b}"
 ```Ruby
 def check_sign(number)
   if number == 0
-    number
-  elsif number > 0
-    "#{number} is positive"
+    puts number
+  elsif number > 0 && number <= 100
+    puts "#{number} is positive"
+  elsif number < 0 && number >= -100
+    puts "#{number} is negative"
   else
-    "#{number} is negative"
+    puts "Unexpected value"
   end        
 end        
 ```
@@ -196,6 +198,19 @@ if a == true
     puts "a is true"
 end
 ```
+### Case
+
+```Ruby
+def check_sign(number)
+  case number
+  when 0 then puts number
+  when 1..100 puts "#{number} is positive"
+  when -100..-1 puts "#{number} is negative"
+  else puts "Unexpected value"
+  end        
+end        
+```
+
 #### Truth
 * Only `false` and `nil` equate to false in Ruby. Objects such as `1`, `0`, `""` are considered to be `true`
 
