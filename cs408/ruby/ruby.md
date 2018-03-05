@@ -287,6 +287,7 @@ STDOUT:
 
 ## Classes
 * Ruby allows one to define classes of objects.
+* No multiple inheritance.
 * To look up an objects class use the `class` method
 * To ask an object if it is a certain class use the `is_a?` method
 
