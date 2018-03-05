@@ -8,6 +8,8 @@
 
 ## Scoping
 
+* Statically scoped
+
 | Name Begins with  | Variable Scope        |
 |:------------------|:----------------------|
 |`$`                |A global variable      |
@@ -234,7 +236,7 @@ end
 
 ```Ruby
 def square(num)
-    return num ** 2
+    num ** 2
 end
 sq(3)
 
@@ -260,3 +262,17 @@ STDOUT:
 10
 ```
 
+### Lambdas
+
+* Set a variable to a lambda function
+
+```
+s = lambda do |num|
+    num ** 2
+end
+
+puts s.call(3)
+
+STDOUT:
+9
+```
