@@ -331,6 +331,19 @@ class Rectangle
     @length * @breadth
   end
 end
+
+r = Rectangle.new(2,2)
+puts r.perimeter
+puts r.area
+r.length = 3
+puts r.perimeter
+puts r.area
+
+STDOUT:
+8
+4
+6
+10
 ```
 
 ## Inheritance
