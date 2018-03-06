@@ -257,6 +257,14 @@ STDOUT:
 [2, 4, 6]
 ```
 
+* `<<` add to array
+```Ruby
+[1,2,3,4,5] << 6
+
+STDOUT:
+[1,2,3,4,5,6]
+```
+
 * `delete` is used to delete elements
 
 ```Ruby
