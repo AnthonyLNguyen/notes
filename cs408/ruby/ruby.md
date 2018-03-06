@@ -317,6 +317,8 @@ true
 ### Class Example
 ```Ruby
 class Rectangle
+  attr_accessor :length
+  attr_accessor :breadth
   def initialize(length, breadth)
     @length = length
     @breadth = breadth
