@@ -306,7 +306,7 @@ STDOUT:
 * To look up an objects class use the `class` method
 * To ask an object if it is a certain class use the `is_a?` method
 
-```
+```Ruby
 puts 2.class
 puts 2.is_a?(Integer)
 
