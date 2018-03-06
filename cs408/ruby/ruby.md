@@ -346,6 +346,16 @@ STDOUT:
 10
 ```
 
+```Ruby
+def length
+  @length
+end
+
+def length=(value)
+  @length = value
+end
+```
+
 ## Inheritance
 * No multiple inheritance
 
